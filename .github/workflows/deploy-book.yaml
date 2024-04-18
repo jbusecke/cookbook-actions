@@ -59,6 +59,11 @@ jobs:
           unzip book.zip
           rm -f book.zip
 
+      - name: Check Publishdir Content
+        run: | 
+          echo ${{ inputs.publish_dir }}
+          ls ${{ inputs.publish_dir }}
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3.9.3
         if: |
